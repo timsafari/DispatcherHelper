@@ -1,0 +1,10 @@
+C:\Users\tsafargaliev\Documents\Visual Studio 2017\Projects\SPS-Helper\SPS-Helper\bin\Debug\SPS-Helper.exe.config
+C:\Users\tsafargaliev\Documents\Visual Studio 2017\Projects\SPS-Helper\SPS-Helper\bin\Debug\SPS-Helper.exe
+C:\Users\tsafargaliev\Documents\Visual Studio 2017\Projects\SPS-Helper\SPS-Helper\bin\Debug\SPS-Helper.pdb
+C:\Users\tsafargaliev\Documents\Visual Studio 2017\Projects\SPS-Helper\SPS-Helper\obj\Debug\SPS-Helper.csprojResolveAssemblyReference.cache
+C:\Users\tsafargaliev\Documents\Visual Studio 2017\Projects\SPS-Helper\SPS-Helper\obj\Debug\SPS_Helper.EntryPoint.resources
+C:\Users\tsafargaliev\Documents\Visual Studio 2017\Projects\SPS-Helper\SPS-Helper\obj\Debug\SPS_Helper.Properties.Resources.resources
+C:\Users\tsafargaliev\Documents\Visual Studio 2017\Projects\SPS-Helper\SPS-Helper\obj\Debug\SPS-Helper.csproj.GenerateResource.Cache
+C:\Users\tsafargaliev\Documents\Visual Studio 2017\Projects\SPS-Helper\SPS-Helper\obj\Debug\SPS-Helper.csproj.CoreCompileInputs.cache
+C:\Users\tsafargaliev\Documents\Visual Studio 2017\Projects\SPS-Helper\SPS-Helper\obj\Debug\SPS-Helper.exe
+C:\Users\tsafargaliev\Documents\Visual Studio 2017\Projects\SPS-Helper\SPS-Helper\obj\Debug\SPS-Helper.pdb

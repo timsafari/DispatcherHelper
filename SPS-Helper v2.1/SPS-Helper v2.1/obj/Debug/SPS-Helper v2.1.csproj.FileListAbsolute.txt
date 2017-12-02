@@ -1,0 +1,5 @@
+C:\Users\tsafargaliev\Documents\Visual Studio 2017\Projects\SPS-Helper v2.1\SPS-Helper v2.1\obj\Debug\SPS-Helper v2.1.csprojResolveAssemblyReference.cache
+C:\Users\tsafargaliev\Documents\Visual Studio 2017\Projects\SPS-Helper v2.1\SPS-Helper v2.1\obj\Debug\SPS_Helper_v2._1.Form1.resources
+C:\Users\tsafargaliev\Documents\Visual Studio 2017\Projects\SPS-Helper v2.1\SPS-Helper v2.1\obj\Debug\SPS_Helper_v2._1.Properties.Resources.resources
+C:\Users\tsafargaliev\Documents\Visual Studio 2017\Projects\SPS-Helper v2.1\SPS-Helper v2.1\obj\Debug\SPS-Helper v2.1.csproj.GenerateResource.Cache
+C:\Users\tsafargaliev\Documents\Visual Studio 2017\Projects\SPS-Helper v2.1\SPS-Helper v2.1\obj\Debug\SPS-Helper v2.1.csproj.CoreCompileInputs.cache
