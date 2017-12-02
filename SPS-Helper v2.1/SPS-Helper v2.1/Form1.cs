@@ -19,7 +19,8 @@ namespace SPS_Helper_v2._1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            SQLCommand s = new SQLCommand();
+            s.Load("D:\\ssadf.txt");
         }
     }
 }
