@@ -78,7 +78,46 @@ namespace SPS_Helper_v2._1
     {
         string Type = "SQL";
         public string ConnectionString;
-        override public int Execute() { int result = 0; return result; }     
+        
+        override public int Execute() 
+        { 
+          int result = 0; 
+          
+          int ConnectionId = 0;
+          SqlDataReader SqlReader = null;
+          SqlCommand command = new SqlCommand(Text);
+          
+          with (ConnectionId = Connection.Open(ConnectionString))
+            {
+              command.Connection = Connections.GetConnection(ConnectionId);
+              
+              try {
+                    SqlReader = command.ExecuteReader();
+                    
+                    if (SqlReader.HasRows)
+                      {
+                        for (int i = 0; i < SqlReader.FieldCount; i++)
+                          {
+                            //считываем сведения о столбцах
+                            SqlReader.GetName(i);
+                          }
+                         
+                         while (SqlReader.Read())
+                          {
+                            for (int j = 0; j < SqlReader.FieldCount; j++)
+                              {
+                                // считываем данные построчно
+                                SqlReader.GetValue(j);
+                              }
+                          }
+                      }
+              
+            }
+          
+          
+          
+          return result; 
+        }     
     }
 
     class MenuCommand : Command
