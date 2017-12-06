@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SPS_Helper_v2._1
+namespace SPS_Helper
 {
     static class Program
     {

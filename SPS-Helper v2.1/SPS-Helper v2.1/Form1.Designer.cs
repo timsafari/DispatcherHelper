@@ -1,4 +1,4 @@
-﻿namespace SPS_Helper_v2._1
+﻿namespace SPS_Helper
 {
     partial class _frm_Menu
     {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SPS_Helper;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SPS_Helper_v2._1
+namespace SPS_Helper
 {
     public partial class _frm_Menu : Form
     {

@@ -6,10 +6,10 @@ C:\Users\tsafargaliev\Documents\Visual Studio 2017\Projects\SPS-Helper v2.1\SPS-
 D:\Творчество\Разработка\SPS-Helper v2.1\SPS-Helper v2.1\bin\Debug\SPS-Helper v2.1.exe.config
 D:\Творчество\Разработка\SPS-Helper v2.1\SPS-Helper v2.1\bin\Debug\SPS-Helper v2.1.exe
 D:\Творчество\Разработка\SPS-Helper v2.1\SPS-Helper v2.1\bin\Debug\SPS-Helper v2.1.pdb
-D:\Творчество\Разработка\SPS-Helper v2.1\SPS-Helper v2.1\obj\Debug\SPS-Helper v2.1.csprojResolveAssemblyReference.cache
-D:\Творчество\Разработка\SPS-Helper v2.1\SPS-Helper v2.1\obj\Debug\SPS_Helper_v2._1._frm_Menu.resources
-D:\Творчество\Разработка\SPS-Helper v2.1\SPS-Helper v2.1\obj\Debug\SPS_Helper_v2._1.Properties.Resources.resources
 D:\Творчество\Разработка\SPS-Helper v2.1\SPS-Helper v2.1\obj\Debug\SPS-Helper v2.1.csproj.GenerateResource.Cache
 D:\Творчество\Разработка\SPS-Helper v2.1\SPS-Helper v2.1\obj\Debug\SPS-Helper v2.1.csproj.CoreCompileInputs.cache
 D:\Творчество\Разработка\SPS-Helper v2.1\SPS-Helper v2.1\obj\Debug\SPS-Helper v2.1.exe
 D:\Творчество\Разработка\SPS-Helper v2.1\SPS-Helper v2.1\obj\Debug\SPS-Helper v2.1.pdb
+D:\Творчество\Разработка\SPS-Helper v2.1\SPS-Helper v2.1\obj\Debug\SPS_Helper._frm_Menu.resources
+D:\Творчество\Разработка\SPS-Helper v2.1\SPS-Helper v2.1\obj\Debug\SPS_Helper.Properties.Resources.resources
+D:\Творчество\Разработка\SPS-Helper v2.1\SPS-Helper v2.1\obj\Debug\SPS-Helper v2.1.csprojResolveAssemblyReference.cache

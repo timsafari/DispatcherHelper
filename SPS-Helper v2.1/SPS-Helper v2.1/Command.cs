@@ -11,13 +11,13 @@ using Microsoft.SqlServer.Server;
 using System.IO;
 
 
-namespace SPS_Helper_v2._1
+namespace SPS_Helper
 {
     class Command
     {
         string Alias;
         string Type { get; }
-        string Text;
+        public string Text;
         //int Buffer_size_in_bytes { get; set; }
         string[] Parameters;
         object[] ParameterValues;
@@ -77,7 +77,7 @@ namespace SPS_Helper_v2._1
     class SQLCommand: Command
     {
         string Type = "SQL";
-        public string ConnectionString;
+        string ConnectionString;
         
         override public int Execute() 
         { 
@@ -86,36 +86,38 @@ namespace SPS_Helper_v2._1
           int ConnectionId = 0;
           SqlDataReader SqlReader = null;
           SqlCommand command = new SqlCommand(Text);
-          
-          with (ConnectionId = Connection.Open(ConnectionString))
+
+            ConnectionId = Connections.OpenConnection(ConnectionString);
+            command.Connection = Connections.GetConnection(ConnectionId);
+
+            try
             {
-              command.Connection = Connections.GetConnection(ConnectionId);
-              
-              try {
-                    SqlReader = command.ExecuteReader();
-                    
-                    if (SqlReader.HasRows)
-                      {
-                        for (int i = 0; i < SqlReader.FieldCount; i++)
-                          {
-                            //считываем сведения о столбцах
-                            SqlReader.GetName(i);
-                          }
-                         
-                         while (SqlReader.Read())
-                          {
-                            for (int j = 0; j < SqlReader.FieldCount; j++)
-                              {
-                                // считываем данные построчно
-                                SqlReader.GetValue(j);
-                              }
-                          }
-                      }
-              
+                SqlReader = command.ExecuteReader();
+
+                if (SqlReader.HasRows)
+                {
+                    for (int i = 0; i < SqlReader.FieldCount; i++)
+                    {
+                        //считываем сведения о столбцах
+                        SqlReader.GetName(i);
+                    }
+
+                    while (SqlReader.Read())
+                    {
+                        for (int j = 0; j < SqlReader.FieldCount; j++)
+                        {
+                            // считываем данные построчно
+                            SqlReader.GetValue(j);
+                        }
+                    }
+                }
             }
-          
-          
-          
+
+            catch
+            {
+
+            } 
+
           return result; 
         }     
     }

@@ -135,7 +135,7 @@
   </data>
   <data name="Work_PS_Files_Subdir" xml:space="preserve">
     <value>Scritps\Powershell\</value>
-    <comment>Пользоваельские скрипты PowerShell</comment>
+    <comment>Пользовательские скрипты PowerShell</comment>
   </data>
   <data name="Work_SQL_Files_Subdir" xml:space="preserve">
     <value>Scritps\SQL\</value>
