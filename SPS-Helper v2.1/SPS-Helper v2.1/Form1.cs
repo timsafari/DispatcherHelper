@@ -21,7 +21,8 @@ namespace SPS_Helper
         private void Form1_Load(object sender, EventArgs e)
         {
             SQLCommand s = new SQLCommand();
-            s.Load("D:\\ssadf.txt");
+            Core.Initialize();
+            //s.Load("C:\\temp\\tezzt.txt");
         }
     }
 }

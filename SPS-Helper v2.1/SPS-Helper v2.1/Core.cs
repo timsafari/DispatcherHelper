@@ -7,9 +7,9 @@ using System.IO;            //Надо для работы с ресурсами
 using System.Reflection;    //Надо для работы с ресурсами
 
 
-namespace SPS_Helper_v2._1
+namespace SPS_Helper
 {
-    class Core
+    public static class Core
     {
        public static void Initialize()
         {
