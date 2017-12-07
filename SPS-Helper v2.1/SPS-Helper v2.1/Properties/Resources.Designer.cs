@@ -79,11 +79,47 @@ namespace SPS_Helper.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Core\PS\.
+        /// </summary>
+        internal static string Core_PS_Files_Subdir {
+            get {
+                return ResourceManager.GetString("Core_PS_Files_Subdir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Core\SQL\.
         /// </summary>
         internal static string Core_SQL_Files_Subdir {
             get {
                 return ResourceManager.GetString("Core_SQL_Files_Subdir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на mdx,dax,xmla,dmx.
+        /// </summary>
+        internal static string List_mdx_ext {
+            get {
+                return ResourceManager.GetString("List_mdx_ext", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на ps,bat,com.
+        /// </summary>
+        internal static string List_ps_ext {
+            get {
+                return ResourceManager.GetString("List_ps_ext", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на sql,txt.
+        /// </summary>
+        internal static string List_sql_ext {
+            get {
+                return ResourceManager.GetString("List_sql_ext", resourceCulture);
             }
         }
         

@@ -56,5 +56,29 @@ namespace SPS_Helper
 
             return result;
         }
+
+        public int CountFilesInDir(string Folder, out int FileCount)
+        {
+            int result = 0;
+            string path = Folder;
+            FileCount = 0;
+
+            if (!path.Contains(":\\"))
+            {
+                path = path + Directory.GetCurrentDirectory();
+            }
+
+            try
+            {
+                FileCount = Directory.GetFiles(Folder).Length;
+            }
+            catch
+            {
+                //Обработка ошибки доступа
+            }
+            
+
+            return result;
+        }
     }
 }

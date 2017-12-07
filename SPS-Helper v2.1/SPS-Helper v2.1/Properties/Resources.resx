@@ -125,9 +125,25 @@
     <value>Core\Menu\</value>
     <comment>Файлы основного меню</comment>
   </data>
+  <data name="Core_PS_Files_Subdir" xml:space="preserve">
+    <value>Core\PS\</value>
+    <comment>Базовые скрипты PowerShell</comment>
+  </data>
   <data name="Core_SQL_Files_Subdir" xml:space="preserve">
     <value>Core\SQL\</value>
     <comment>Скрипты SQL, являющиеся базовыми</comment>
+  </data>
+  <data name="List_mdx_ext" xml:space="preserve">
+    <value>mdx,dax,xmla,dmx</value>
+    <comment>Расширения файлов, которые можно пытаться интерпретировать как команды для Analysis Services</comment>
+  </data>
+  <data name="List_ps_ext" xml:space="preserve">
+    <value>ps,bat,com</value>
+    <comment>Расширения файлов, которые можно пытаться интерпретировать как команды для PowerShell</comment>
+  </data>
+  <data name="List_sql_ext" xml:space="preserve">
+    <value>sql,txt</value>
+    <comment>Расширения файлов, которые можно пытаться интерпретировать как команды sql</comment>
   </data>
   <data name="Work_Menu_Files_Subdir" xml:space="preserve">
     <value>Scritps\ExtMenu\</value>
