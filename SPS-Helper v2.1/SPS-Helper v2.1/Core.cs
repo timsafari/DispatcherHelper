@@ -25,6 +25,11 @@ namespace SPS_Helper
 
             Errors.Initialize();
             GetCoreDirectories(out CoreDirs);
+            
+           
+                    
+              
+              
 
             /*
              * scripts_subdir_count = количество непустых субдиректорий со скриптами
@@ -82,6 +87,42 @@ namespace SPS_Helper
                 Errors.ShowByCode(-21, args);
             }
 
+        }
+        
+        
+        static int CountCommands()
+        {
+            int result = 0;
+            int counter = 0;
+            string WorkingPath = Properties.Directory;
+           
+            foreach(string folder in CoreDirs)
+              {
+                try
+                {
+                  result = CountFilesInDir(WorkingPath + folder, out counter);
+                }
+                catch
+                {
+                  Error.ShowById(result);
+                  return result;
+                }
+                switch (folder)
+                {
+                    case "Core_Menu_Files_Subdir":
+                      menu_command_count = counter;
+                    break;
+                    case "Core_SQL_Files_Subdir":
+                      sqlcommand_count = counter;
+                    break;
+                    case "Core_PS_Files_Subdir":
+                      pscommand_count = counter;
+                    break;
+                    case "Core_MDX_Files_Subdir":
+                      mdxcommand_count = counter;
+                    
+                    break;
+                }
         }
     }
 

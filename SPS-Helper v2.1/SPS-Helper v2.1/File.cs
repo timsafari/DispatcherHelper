@@ -70,14 +70,19 @@ namespace SPS_Helper
 
             try
             {
-                FileCount = Directory.GetFiles(Folder).Length;
+                result = Directory.GetFiles(Folder).Length;
             }
             catch
             {
-                //Обработка ошибки доступа
+                Error.ShowById(1);
+                return result;
             }
             
-
+            
+            FileCount = result;
+            
+            result = 0;
+            
             return result;
         }
     }
