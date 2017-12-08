@@ -38,6 +38,7 @@
             this.Name = "_frm_Menu";
             this.Text = "SPS-Helper";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Click += new System.EventHandler(this._frm_Menu_Click);
             this.ResumeLayout(false);
 
         }

@@ -16,7 +16,6 @@ D:\Творчество\Разработка\SPS-Helper v2.1\SPS-Helper v2.1\obj
 C:\Users\tsafargaliev\Documents\Personal\Git\SPS-Helper v2.1\SPS-Helper v2.1\bin\Debug\SPS-Helper v2.1.exe.config
 C:\Users\tsafargaliev\Documents\Personal\Git\SPS-Helper v2.1\SPS-Helper v2.1\bin\Debug\SPS-Helper v2.1.exe
 C:\Users\tsafargaliev\Documents\Personal\Git\SPS-Helper v2.1\SPS-Helper v2.1\bin\Debug\SPS-Helper v2.1.pdb
-C:\Users\tsafargaliev\Documents\Personal\Git\SPS-Helper v2.1\SPS-Helper v2.1\obj\Debug\SPS-Helper v2.1.csprojResolveAssemblyReference.cache
 C:\Users\tsafargaliev\Documents\Personal\Git\SPS-Helper v2.1\SPS-Helper v2.1\obj\Debug\SPS_Helper._frm_Menu.resources
 C:\Users\tsafargaliev\Documents\Personal\Git\SPS-Helper v2.1\SPS-Helper v2.1\obj\Debug\SPS_Helper.Properties.Resources.resources
 C:\Users\tsafargaliev\Documents\Personal\Git\SPS-Helper v2.1\SPS-Helper v2.1\obj\Debug\SPS-Helper v2.1.csproj.GenerateResource.Cache

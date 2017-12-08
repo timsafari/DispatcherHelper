@@ -24,5 +24,10 @@ namespace SPS_Helper
             Core.Initialize();
             //s.Load("C:\\temp\\tezzt.txt");
         }
+
+        private void _frm_Menu_Click(object sender, EventArgs e)
+        {
+            Errors.ShowByCode(99);
+        }
     }
 }
