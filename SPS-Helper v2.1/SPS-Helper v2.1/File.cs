@@ -57,10 +57,11 @@ namespace SPS_Helper
             return result;
         }
 
-        public int CountFilesInDir(string Folder, out int FileCount)
+       public int CountFilesInDirByExt(string Folder, string ExtList, out int FileCount)
         {
             int result = 0;
             string path = Folder;
+            
             FileCount = 0;
 
             if (!path.Contains(":\\"))
@@ -70,7 +71,16 @@ namespace SPS_Helper
 
             try
             {
-                result = Directory.GetFiles(Folder).Length;
+                string[] files = Directory.GetFiles(path);
+                string ext="";
+                 foreach(string file in files)
+                  {
+                      ext = Path.GetExtention(file));
+                      if (ExtList.Contains(ext))
+                        {
+                          result++;
+                        }
+                  }
             }
             catch
             {

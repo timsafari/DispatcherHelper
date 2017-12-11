@@ -94,32 +94,39 @@ namespace SPS_Helper
         {
             int result = 0;
             int counter = 0;
-            string WorkingPath = Properties.Directory;
+            string WorkingPath = "";
+            string Ext = "";
            
             foreach(string folder in CoreDirs)
               {
-                try
-                {
-                  result = CountFilesInDir(WorkingPath + folder, out counter);
-                }
+                WorkingPath = Properties.Directory;
+              
+               
                 catch
                 {
                   Error.ShowById(result);
                   return result;
                 }
+                
                 switch (folder)
                 {
                     case "Core_Menu_Files_Subdir":
-                      menu_command_count = counter;
+                      Ext = Properties.Resources.List_menu_ext;
+                      result = CountFilesInDirByExt(WorkingPath + folder, Ext, out menu_command_count);
                     break;
+                    
                     case "Core_SQL_Files_Subdir":
-                      sqlcommand_count = counter;
+                      Ext = Properties.Resources.List_sql_ext;
+                      result = CountFilesInDirByExt(WorkingPath + folder, Ext, out sqlcommand_count);
                     break;
+                    
                     case "Core_PS_Files_Subdir":
-                      pscommand_count = counter;
+                      Ext = Properties.Resources.List_ps_ext;
+                      result = CountFilesInDirByExt(WorkingPath + folder, Ext, out pscommand_count);
                     break;
                     case "Core_MDX_Files_Subdir":
-                      mdxcommand_count = counter;
+                      Ext = Properties.Resources.List_mdx_ext;
+                      result = CountFilesInDirByExt(WorkingPath + folder, Ext, out mdxcommand_count);
                     
                     break;
                 }
