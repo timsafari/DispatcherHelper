@@ -106,6 +106,15 @@ namespace SPS_Helper.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на menu.
+        /// </summary>
+        internal static string List_menu_ext {
+            get {
+                return ResourceManager.GetString("List_menu_ext", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на ps,bat,com.
         /// </summary>
         internal static string List_ps_ext {

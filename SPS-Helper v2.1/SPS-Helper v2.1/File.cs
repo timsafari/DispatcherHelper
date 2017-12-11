@@ -61,7 +61,6 @@ namespace SPS_Helper
         {
             int result = 0;
             string path = Folder;
-            
             FileCount = 0;
 
             if (!path.Contains(":\\"))
@@ -69,13 +68,17 @@ namespace SPS_Helper
                 path = path + Directory.GetCurrentDirectory();
             }
 
+            System.Windows.Forms.MessageBox.Show(ExtList,path);
+
             try
             {
                 string[] files = Directory.GetFiles(path);
+
                 string ext="";
-                 foreach(string file in files)
+
+                foreach(string file in files)
                   {
-                      ext = Path.GetExtention(file));
+                      ext = Path.GetExtension(file);
                       if (ExtList.Contains(ext))
                         {
                           result++;
@@ -84,14 +87,13 @@ namespace SPS_Helper
             }
             catch
             {
-                Error.ShowById(1);
+                result = -1;
+                Errors.ShowByID(1);
                 return result;
             }
             
             
             FileCount = result;
-            
-            result = 0;
             
             return result;
         }

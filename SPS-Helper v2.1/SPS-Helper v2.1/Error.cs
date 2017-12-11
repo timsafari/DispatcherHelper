@@ -36,62 +36,62 @@ namespace SPS_Helper
             Error[1].Section = (int)Sections.Files;
             Error[1].Subsection = "Файлы ядра";
             Error[1].Header = "Ошибка доступа к файлу";
-            Error[1].Description = "Отсутствует директория или путь {{1}} некорректен";
+            Error[1].Description = "Отсутствует директория или путь {{0}} некорректен";
 
             Error[2].Code = -2;
             Error[2].Section = (int)Sections.Files;
             Error[2].Subsection = "Файлы ядра";
             Error[2].Header = "Ошибка доступа к файлу";
-            Error[2].Description = "Не удается открыть для чтения файл {{1}}, ошибка {{2}}";
+            Error[2].Description = "Не удается открыть для чтения файл {{0}}, ошибка {{1}}";
 
             Error[3].Code = -3;
             Error[3].Section = (int)Sections.Files;
             Error[3].Subsection = "Файлы ядра";
             Error[3].Header = "Ошибка доступа к файлу";
-            Error[3].Description = "Не удается открыть для записи файл {{1}}, ошибка {{2}}";
+            Error[3].Description = "Не удается открыть для записи файл {{0}}, ошибка {{1}}";
 
             Error[4].Code = -3;
             Error[4].Section = (int)Sections.Files;
             Error[4].Subsection = "Файлы ядра";
             Error[4].Header = "Ошибка доступа к файлу";
-            Error[4].Description = "Не удается прочитать данные из файла {{1}}, ошибка {{2}}";
+            Error[4].Description = "Не удается прочитать данные из файла {{0}}, ошибка {{1}}";
 
             Error[5].Code = -5;
             Error[5].Section = (int)Sections.Files;
             Error[5].Subsection = "Файлы ядра";
             Error[5].Header = "Ошибка доступа к файлу";
-            Error[5].Description = "Не удается закрыть файл {{1}}, ошибка {{2}}";
+            Error[5].Description = "Не удается закрыть файл {{0}}, ошибка {{1}}";
 
             //Пользовательские файлы
             Error[6].Code = -1;
             Error[6].Section = (int)Sections.Files;
             Error[6].Subsection = "Файлы ядра";
             Error[6].Header = "Ошибка доступа к файлу";
-            Error[6].Description = "Отсутствует директория или путь некорректен {{1}}";
+            Error[6].Description = "Отсутствует директория или путь некорректен {{0}}";
 
             Error[7].Code = -2;
             Error[7].Section = (int)Sections.Files;
             Error[7].Subsection = "Пользовательские файлы";
             Error[7].Header = "Ошибка доступа к файлу";
-            Error[7].Description = "Не удается открыть для чтения файл {{1}}, ошибка {{2}}";
+            Error[7].Description = "Не удается открыть для чтения файл {{0}}, ошибка {{1}}";
 
             Error[8].Code = -3;
             Error[8].Section = (int)Sections.Files;
             Error[8].Subsection = "Пользовательские файлы";
             Error[8].Header = "Ошибка доступа к файлу";
-            Error[8].Description = "Не удается открыть для записи файл {{1}}, ошибка {{2}}";
+            Error[8].Description = "Не удается открыть для записи файл {{0}}, ошибка {{1}}";
 
             Error[9].Code = -4;
             Error[9].Section = (int)Sections.Files;
             Error[9].Subsection = "Пользовательские файлы";
             Error[9].Header = "Ошибка доступа к файлу";
-            Error[9].Description = "Не удается прочитать данные из файла {{1}}, ошибка {{2}}";
+            Error[9].Description = "Не удается прочитать данные из файла {{0}}, ошибка {{1}}";
 
             Error[10].Code = -5;
             Error[10].Section = (int)Sections.Files;
             Error[10].Subsection = "Пользовательские файлы";
             Error[10].Header = "Ошибка доступа к файлу";
-            Error[10].Description = "Не удается закрыть файл {{1}}, ошибка {{2}}";
+            Error[10].Description = "Не удается закрыть файл {{0}}, ошибка {{1}}";
 
             /*
              * Ресурсы
@@ -100,7 +100,7 @@ namespace SPS_Helper
             Error[11].Section = (int)Sections.Core;
             Error[11].Subsection = "Пути";
             Error[11].Header = "Ошибка доступа к значениям ресурсов";
-            Error[11].Description = "Не удается прочитать значение ресурса {{1}}, ошибка {{2}}";
+            Error[11].Description = "Не удается прочитать значение ресурса {{0}}, ошибка {{1}}";
 
             /*
              *  Ошибки
@@ -109,7 +109,7 @@ namespace SPS_Helper
             Error[12].Section = (int)Sections.Core;
             Error[12].Subsection = "Ошибки";
             Error[12].Header = "Ошибка доступа к сведениям об ошибке";
-            Error[12].Description = "Нет описания для ошибки с кодом: {{1}}";
+            Error[12].Description = "Нет описания для ошибки с кодом: {{0}}";
         }
         public static void Log()
         {
@@ -117,12 +117,12 @@ namespace SPS_Helper
         }
         public static void ShowByCode(int Error_code,object[] args = null)
         {
-            string header = "";
-            string message = "";
-            string details = "";
-            bool flag = false;
-            int args_arg_count = 0;
+            string header = "";     //Заголовок MessageBox'а
+            string message = "";    //Описание ошибки
+            
+            bool flag = false;            
 
+            //Пытаемся найти ошибку по коду
             try
             {
                 
@@ -134,7 +134,7 @@ namespace SPS_Helper
                         header = Error[i].Header;
                         message = Error[i].Description;
                         flag = true;
-                        System.Windows.Forms.MessageBox.Show("flag==true", "catch");
+                        //System.Windows.Forms.MessageBox.Show("flag==true", "try");
                         break;
                     }
                 }                
@@ -144,21 +144,26 @@ namespace SPS_Helper
 
             }
 
+            //Если нашли
             if (flag == true)  
             {
-
+                //Проверим аргументы и заменим
                 if (args != null)
                 {
-                    args_arg_count = args.Length;
+                    string details = "";    //Очередной аргумент
+
+                    int args_arg_count = args.Length;
+
                     for (int j = 0; j < args_arg_count; j++)
                     {
                         details = args[j].ToString();
                         message = message.Replace("{{" + j.ToString() + "}}", details);
+                        
                     }
-                    System.Windows.Forms.MessageBox.Show("flag==true", "args");
+                    //System.Windows.Forms.MessageBox.Show("flag==true", "args");
                 }
             }
-            else
+            else //Если не нашли, выведем, что ошибка не найдена
             {
                 try
                 {
@@ -171,11 +176,11 @@ namespace SPS_Helper
                     message = "Нет описания для ошибки";
                 }
 
-
+                //И попытаемся указать описание, переданное системой
                 if (args != null)
                     try
                     {
-                        message = message.Replace("{{1}}", args[0].ToString());
+                        message = message.Replace("{{0}}", args[0].ToString());
                     }
                     catch
                     {
@@ -194,11 +199,6 @@ namespace SPS_Helper
             string details = "";
             bool flag = false;
 
-            //int details_arg_count = 0;
-            int args_arg_count = 0;
-
-
-
             try
             {
                 header = Error[Error_id].Header;
@@ -216,7 +216,7 @@ namespace SPS_Helper
 
                 if (args != null)
                 {
-                    args_arg_count = args.Length;
+                    int args_arg_count = args.Length;
                     for (int j = 0; j < args_arg_count; j++)
                     {
                         details = args[j].ToString();
@@ -238,7 +238,7 @@ namespace SPS_Helper
                 }
 
                 if (args != null)
-                    message = message.Replace("{{1}}", args[0].ToString());
+                    message = message.Replace("{{0}}", args[0].ToString());
                 else
                     message = "Нет описания для ошибки";
             }

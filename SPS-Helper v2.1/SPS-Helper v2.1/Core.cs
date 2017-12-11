@@ -12,25 +12,29 @@ namespace SPS_Helper
     public static class Core
     {
        public static int Initialized = 0;
+
        static List<string> CoreDirs = null;
+
+       static int scripts_subdir_count = 0;
+       static int sqlcommand_count = 0;
+       static int mdxcommand_count = 0;
+       static int pscommand_count = 0;
+       static int menu_command_count = 0;
 
         public static void Initialize()
         {
-            int scripts_subdir_count = 0;
-            int sqlcommand_count = 0;
-            int mdxcommand_count = 0;
-            int pscommand_count = 0;
-            int menu_command_count = 0;
+            int result = 0;
             
 
             Errors.Initialize();
-            GetCoreDirectories(out CoreDirs);
-            
-           
-                    
-              
-              
+            result = GetCoreDirectories(out CoreDirs);
 
+            if (result != 0)
+            {
+                Environment.Exit(result);
+            }
+
+            CountCommands();
             /*
              * scripts_subdir_count = количество непустых субдиректорий со скриптами
              * sqlcommand_count,mdxcommand_count,pscommand_count,menu_command_count - количество скриптов соотв.типа
@@ -42,40 +46,47 @@ namespace SPS_Helper
             MenuCommand[] MenuCommands = new MenuCommand[menu_command_count];
 
             Initialized = 1;
+           
 
         }
 
-        static void GetCoreDirectories(out List<string> CoreDirs)
+        static int GetCoreDirectories(out List<string> CoreDirs)
         {
-            CoreDirs = null;
+            int result = 0;
+            CoreDirs = new List<string>();
+
             try
             {
-                CoreDirs.Add(Properties.Resources.Core_Menu_Files_Subdir);            
+                CoreDirs.Add(Properties.Resources.Core_Menu_Files_Subdir);
             }
             catch (Exception e)
             {
+                result = -21;
                 object[] args = new object[2] { "Core_Menu_Files_Subdir", e.Message };
-                Errors.ShowByCode(-21, args );
+                Errors.ShowByCode(result, args );
             }
             try
             {
                 CoreDirs.Add(Properties.Resources.Core_SQL_Files_Subdir);
-
             }
             catch (Exception e)
             {
-                object[] args = new object[2] { "Core_SQL_Files_Subdir", e.Message };
-                Errors.ShowByCode(-21, args);
+                result = -21;
+                object[] args = new object[2] { "Core_SQL_Files_Subdir", e.Message };                
+                Errors.ShowByCode(result, args);
             }
+
             try
             {
                 CoreDirs.Add(Properties.Resources.Core_PS_Files_Subdir);
             }
             catch (Exception e)
             {
-                object[] args = new object[2] { "Core_PS_Files_Subdir", e.Message };
-                Errors.ShowByCode(-21, args);
+                result = -21;
+                object[] args = new object[2] { "Core_PS_Files_Subdir", e.Message };                
+                Errors.ShowByCode(result, args);
             }
+
             try
             {
 
@@ -83,53 +94,56 @@ namespace SPS_Helper
             }
             catch (Exception e)
             {
+                result = -21;
                 object[] args = new object[2] { "Core_MDX_Files_Subdir", e.Message };
-                Errors.ShowByCode(-21, args);
+                Errors.ShowByCode(result, args);
             }
 
+            return result;
+
         }
-        
-        
+
+
         static int CountCommands()
         {
             int result = 0;
-            int counter = 0;
+
             string WorkingPath = "";
             string Ext = "";
-           
-            foreach(string folder in CoreDirs)
-              {
-                WorkingPath = Properties.Directory;
-              
-               
-                catch
-                {
-                  Error.ShowById(result);
-                  return result;
-                }
-                
+            FileWorker fw = new FileWorker();
+
+            foreach (string folder in CoreDirs)
+            {
+                WorkingPath = AppContext.BaseDirectory;
+
                 switch (folder)
                 {
                     case "Core_Menu_Files_Subdir":
-                      Ext = Properties.Resources.List_menu_ext;
-                      result = CountFilesInDirByExt(WorkingPath + folder, Ext, out menu_command_count);
-                    break;
-                    
+                        Ext = Properties.Resources.List_menu_ext;
+                        result = fw.CountFilesInDirByExt(WorkingPath + folder, Ext, out menu_command_count);                        
+                        break;
+
                     case "Core_SQL_Files_Subdir":
-                      Ext = Properties.Resources.List_sql_ext;
-                      result = CountFilesInDirByExt(WorkingPath + folder, Ext, out sqlcommand_count);
-                    break;
-                    
+                        Ext = Properties.Resources.List_sql_ext;
+                        result = fw.CountFilesInDirByExt(WorkingPath + folder, Ext, out sqlcommand_count);
+                        break;
+
                     case "Core_PS_Files_Subdir":
-                      Ext = Properties.Resources.List_ps_ext;
-                      result = CountFilesInDirByExt(WorkingPath + folder, Ext, out pscommand_count);
-                    break;
+                        Ext = Properties.Resources.List_ps_ext;
+                        result = fw.CountFilesInDirByExt(WorkingPath + folder, Ext, out pscommand_count);
+                        break;
                     case "Core_MDX_Files_Subdir":
-                      Ext = Properties.Resources.List_mdx_ext;
-                      result = CountFilesInDirByExt(WorkingPath + folder, Ext, out mdxcommand_count);
-                    
-                    break;
+                        Ext = Properties.Resources.List_mdx_ext;
+                        result = fw.CountFilesInDirByExt(WorkingPath + folder, Ext, out mdxcommand_count);
+                        break;
                 }
+
+                //System.Windows.Forms.MessageBox.Show(WorkingPath + folder);
+
+
+            }
+
+            return result;
         }
     }
 

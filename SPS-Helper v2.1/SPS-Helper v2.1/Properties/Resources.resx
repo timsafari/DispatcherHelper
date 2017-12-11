@@ -137,6 +137,10 @@
     <value>mdx,dax,xmla,dmx</value>
     <comment>Расширения файлов, которые можно пытаться интерпретировать как команды для Analysis Services</comment>
   </data>
+  <data name="List_menu_ext" xml:space="preserve">
+    <value>menu</value>
+    <comment>Расширения файлов меню</comment>
+  </data>
   <data name="List_ps_ext" xml:space="preserve">
     <value>ps,bat,com</value>
     <comment>Расширения файлов, которые можно пытаться интерпретировать как команды для PowerShell</comment>
