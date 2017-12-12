@@ -68,7 +68,7 @@ namespace SPS_Helper
                 path = path + Directory.GetCurrentDirectory();
             }
 
-            System.Windows.Forms.MessageBox.Show(ExtList,path);
+            System.Windows.Forms.MessageBox.Show("в папке: \n" + path,"Ищем расширение: " + ExtList);
 
             try
             {
@@ -81,19 +81,20 @@ namespace SPS_Helper
                       ext = Path.GetExtension(file);
                       if (ExtList.Contains(ext))
                         {
-                          result++;
+                            FileCount++;
                         }
                   }
             }
             catch
             {
                 result = -1;
-                Errors.ShowByID(1);
+
+                object[] args = new object[1];
+                args[0] = path;
+
+                Errors.ShowByID(1, args);
                 return result;
             }
-            
-            
-            FileCount = result;
             
             return result;
         }
