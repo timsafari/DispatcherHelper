@@ -18,6 +18,7 @@ namespace SPS_Helper
         string Alias;
         string Type { get; }
         public string Text;
+        public string Result;
         //int Buffer_size_in_bytes { get; set; }
         string[] Parameters;
         object[] ParameterValues;
@@ -105,5 +106,11 @@ namespace SPS_Helper
     {
         public string Type = "MDX";
   
+    }
+
+    class Http_s : Command
+    {
+        public string Type = "http";
+        public string Response = "";
     }
 }
