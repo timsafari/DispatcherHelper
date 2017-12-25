@@ -93,39 +93,52 @@ namespace SPS_Helper
             Error[10].Header = "Ошибка доступа к файлу";
             Error[10].Description = "Не удается закрыть файл {{0}}, ошибка {{1}}";
 
+            Error[11].Code = -6;
+            Error[11].Section = (int)Sections.Files;
+            Error[11].Subsection = "Пользовательские файлы";
+            Error[11].Header = "Ошибка доступа к файлу";
+            Error[11].Description = "Файл {{0}} уже существует, перезаписываем?";
+
+            Error[12].Code = -7;
+            Error[12].Section = (int)Sections.Files;
+            Error[12].Subsection = "Пользовательские файлы";
+            Error[12].Header = "Ошибка доступа к файлу";
+            Error[12].Description = "Файл {{0}} уже существует, перезаписываем?";
+
+
             /*
              * Ресурсы
              */
-            Error[11].Code = -21;
-            Error[11].Section = (int)Sections.Core;
-            Error[11].Subsection = "Пути";
-            Error[11].Header = "Ошибка доступа к значениям ресурсов";
-            Error[11].Description = "Не удается прочитать значение ресурса {{0}}, ошибка {{1}}";
+            Error[13].Code = -21;
+            Error[13].Section = (int)Sections.Core;
+            Error[13].Subsection = "Пути";
+            Error[13].Header = "Ошибка доступа к значениям ресурсов";
+            Error[13].Description = "Не удается прочитать значение ресурса {{0}}, ошибка {{1}}";
 
             /*
              *  Ошибки
              */
-            Error[12].Code = -404;
-            Error[12].Section = (int)Sections.Core;
-            Error[12].Subsection = "Ошибки";
-            Error[12].Header = "Ошибка доступа к сведениям об ошибке";
-            Error[12].Description = "Нет описания для ошибки с кодом: {{0}}";
+            Error[14].Code = -404;
+            Error[14].Section = (int)Sections.Core;
+            Error[14].Subsection = "Ошибки";
+            Error[14].Header = "Ошибка доступа к сведениям об ошибке";
+            Error[14].Description = "Нет описания для ошибки с кодом: {{0}}";
 
 
             /*
              *  SQL
              */
-            Error[13].Code = -500;
-            Error[13].Section = (int)Sections.Commands;
-            Error[13].Subsection = "Результат запроса";
-            Error[13].Header = "Возвращен пустой результат";
-            Error[13].Description = "Вероятно, это даже и не ошибка";
+            Error[15].Code = -500;
+            Error[15].Section = (int)Sections.Commands;
+            Error[15].Subsection = "Результат запроса";
+            Error[15].Header = "Возвращен пустой результат";
+            Error[15].Description = "Вероятно, это даже и не ошибка";
 
-            Error[14].Code = -501;
-            Error[14].Section = (int)Sections.Commands;
-            Error[14].Subsection = "Результат запроса";
-            Error[14].Header = "Ошибка считывания результата запроса";
-            Error[14].Description = "Успели дойти до строки {{1}}";
+            Error[16].Code = -501;
+            Error[16].Section = (int)Sections.Commands;
+            Error[16].Subsection = "Результат запроса";
+            Error[16].Header = "Ошибка считывания результата запроса";
+            Error[16].Description = "Успели дойти до строки {{1}}";
         }
         public static void Log()
         {
@@ -261,6 +274,87 @@ namespace SPS_Helper
 
             System.Windows.Forms.MessageBox.Show(message, header);
         }
+        public static System.Windows.Forms.DialogResult ShowByCode_Dialog(int Error_code, object[] args = null, System.Windows.Forms.MessageBoxButtons buttons = System.Windows.Forms.MessageBoxButtons.OKCancel)
+        {
+            System.Windows.Forms.DialogResult result = System.Windows.Forms.DialogResult.None;
+
+            string header = "";     //Заголовок MessageBox'а
+            string message = "";    //Описание ошибки
+
+            bool flag = false;
+
+            //Пытаемся найти ошибку по коду
+            try
+            {
+
+                for (int i = 0; i < Error.Length; i++)
+                {
+                    if (Error[i].Code == Error_code)
+
+                    {
+                        header = Error[i].Header;
+                        message = Error[i].Description;
+                        flag = true;
+                        //System.Windows.Forms.MessageBox.Show("flag==true", "try");
+                        break;
+                    }
+                }
+            }
+            catch
+            {
+
+            }
+
+            //Если нашли
+            if (flag == true)
+            {
+                //Проверим аргументы и заменим
+                if (args != null)
+                {
+                    string details = "";    //Очередной аргумент
+
+                    int args_arg_count = args.Length;
+
+                    for (int j = 0; j < args_arg_count; j++)
+                    {
+                        details = args[j].ToString();
+                        message = message.Replace("{{" + j.ToString() + "}}", details);
+
+                    }
+                    //System.Windows.Forms.MessageBox.Show("flag==true", "args");
+                }
+            }
+            else //Если не нашли, выведем, что ошибка не найдена
+            {
+                try
+                {
+                    header = Error[12].Header;
+                    message = Error[12].Description;
+                }
+                catch
+                {
+                    header = "Произошла какая-то ошибка";
+                    message = "Нет описания для ошибки";
+                }
+
+                //И попытаемся указать описание, переданное системой
+                if (args != null)
+                    try
+                    {
+                        message = message.Replace("{{0}}", args[0].ToString());
+                    }
+                    catch
+                    {
+
+                    }
+                else
+                    message = "Нет описания для ошибки";
+            }
+            
+            result = System.Windows.Forms.MessageBox.Show(message, header,buttons);
+            return result;
+        }
+        
         /*
         // В порядке бреда
         List<List<List<List<string>>>> Errors = new List<List<List<List<string>>>>();

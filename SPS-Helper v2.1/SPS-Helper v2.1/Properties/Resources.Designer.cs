@@ -61,6 +61,15 @@ namespace SPS_Helper.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Etc\ConnStr\.
+        /// </summary>
+        internal static string ConnectionStrings {
+            get {
+                return ResourceManager.GetString("ConnectionStrings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Core\MDX\.
         /// </summary>
         internal static string Core_MDX_Files_Subdir {

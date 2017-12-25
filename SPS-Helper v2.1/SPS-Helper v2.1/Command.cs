@@ -82,14 +82,14 @@ namespace SPS_Helper
                 }
                 else
                 {
-                    result = -13;
+                    result = -15;
                     return result;
                 }
             }
 
             catch
             {
-                result = -14;
+                result = -16;
                 object[] args = new object[1];
                 args[0] = (object)j;
                 Errors.ShowByID(result, args);

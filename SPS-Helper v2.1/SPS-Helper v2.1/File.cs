@@ -17,10 +17,10 @@ namespace SPS_Helper
             int position = 0;
             int fact_bytes = 0;
 
-            FileStream command_file = null;
+            FileStream txt_file = null;
             try
             {
-                command_file = new FileStream(Path, FileMode.Open);
+                txt_file = new FileStream(Path, FileMode.Open);
             }
             catch
             {
@@ -30,15 +30,15 @@ namespace SPS_Helper
             }
 
             //Ининциализация необходимых переменных
-            byte[] bytes = new byte[command_file.Length];
-            int numBytesToRead = (int)command_file.Length;
-            
+            byte[] bytes = new byte[txt_file.Length];
+            int numBytesToRead = (int)txt_file.Length;
+
 
             while (numBytesToRead > 0)
             {
                 try
                 {
-                    fact_bytes = command_file.Read(bytes, position, numBytesToRead);
+                    fact_bytes = txt_file.Read(bytes, position, numBytesToRead);
                 }
                 catch
                 {
@@ -52,12 +52,12 @@ namespace SPS_Helper
                 numBytesToRead -= fact_bytes;
             }
 
-            command_file.Close();
+            txt_file.Close();
 
             return result;
         }
 
-       public int CountFilesInDirByExt(string Folder, string ExtList, out int FileCount)
+        public int CountFilesInDirByExt(string Folder, string ExtList, out int FileCount)
         {
             int result = 0;
             string path = Folder;
@@ -68,22 +68,22 @@ namespace SPS_Helper
                 path = path + Directory.GetCurrentDirectory();
             }
 
-            System.Windows.Forms.MessageBox.Show("в папке: \n" + path,"Ищем расширение: " + ExtList);
+            System.Windows.Forms.MessageBox.Show("в папке: \n" + path, "Ищем расширение: " + ExtList);
 
             try
             {
                 string[] files = Directory.GetFiles(path);
 
-                string ext="";
+                string ext = "";
 
-                foreach(string file in files)
-                  {
-                      ext = Path.GetExtension(file);
-                      if (ExtList.Contains(ext))
-                        {
-                            FileCount++;
-                        }
-                  }
+                foreach (string file in files)
+                {
+                    ext = Path.GetExtension(file);
+                    if (ExtList.Contains(ext))
+                    {
+                        FileCount++;
+                    }
+                }
             }
             catch
             {
@@ -95,7 +95,46 @@ namespace SPS_Helper
                 Errors.ShowByID(1, args);
                 return result;
             }
-            
+
+            return result;
+        }
+
+        public int Write(string TextData, string Path)
+        {
+            int result = 0;
+
+            FileStream txt_file = null;
+
+            try
+            {
+                txt_file = new FileStream(Path, FileMode.CreateNew);
+            }
+            catch (Exception e)
+            {
+                object[] args = new object[1];
+                args[0] = e.Message;
+
+                result = -6;
+
+                System.Windows.Forms.DialogResult dr = new System.Windows.Forms.DialogResult();
+                dr = Errors.ShowByCode_Dialog(result, args, System.Windows.Forms.MessageBoxButtons.OKCancel);
+
+                if (dr == System.Windows.Forms.DialogResult.OK)
+                {
+                    try
+                    {
+                        txt_file = new FileStream(Path, FileMode.CreateNew);
+                    }
+                    catch (Exception e2)
+                    {
+                        result = -7;
+                        return result;
+                    }
+                }
+
+                return result;
+            }
+
             return result;
         }
     }

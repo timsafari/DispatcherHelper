@@ -16,6 +16,7 @@ namespace SPS_Helper
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Core.Initialize();
             Application.Run(new _frm_Menu());
         }
     }

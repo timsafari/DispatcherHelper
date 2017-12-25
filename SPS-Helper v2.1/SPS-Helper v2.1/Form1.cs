@@ -20,14 +20,13 @@ namespace SPS_Helper
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            SQLCommand s = new SQLCommand();
-            Core.Initialize();
-            //s.Load("C:\\temp\\tezzt.txt");
         }
 
         private void _frm_Menu_Click(object sender, EventArgs e)
         {
-            Errors.ShowByCode(99);
+            object[] args = new object[1];
+            args[0] = "some path";
+            Errors.ShowByCode_Dialog(-6, args);
         }
     }
 }

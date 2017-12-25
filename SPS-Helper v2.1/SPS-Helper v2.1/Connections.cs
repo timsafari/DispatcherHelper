@@ -12,6 +12,9 @@ namespace SPS_Helper
 
         private static List <SqlConnection> sqlconnections = new List<SqlConnection>();
 
+        public static List<string> sql_connectionstrings = new List<string>();
+        public static List<string> mdx_connectionstrings = new List<string>();
+
         public static int CountOpened()
         {
             int result = 0;
@@ -95,6 +98,15 @@ namespace SPS_Helper
             {
 
             }
+            return result;
+        }
+
+        public static int LoadConnectionStrings()
+        {
+            int result = 0;
+
+            
+
             return result;
         }
     }
