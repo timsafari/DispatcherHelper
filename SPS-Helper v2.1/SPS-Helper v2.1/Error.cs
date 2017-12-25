@@ -110,6 +110,22 @@ namespace SPS_Helper
             Error[12].Subsection = "Ошибки";
             Error[12].Header = "Ошибка доступа к сведениям об ошибке";
             Error[12].Description = "Нет описания для ошибки с кодом: {{0}}";
+
+
+            /*
+             *  SQL
+             */
+            Error[13].Code = -500;
+            Error[13].Section = (int)Sections.Commands;
+            Error[13].Subsection = "Результат запроса";
+            Error[13].Header = "Возвращен пустой результат";
+            Error[13].Description = "Вероятно, это даже и не ошибка";
+
+            Error[14].Code = -501;
+            Error[14].Section = (int)Sections.Commands;
+            Error[14].Subsection = "Результат запроса";
+            Error[14].Header = "Ошибка считывания результата запроса";
+            Error[14].Description = "Успели дойти до строки {{1}}";
         }
         public static void Log()
         {

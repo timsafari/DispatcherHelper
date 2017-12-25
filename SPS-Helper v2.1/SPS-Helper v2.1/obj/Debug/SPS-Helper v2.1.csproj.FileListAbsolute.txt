@@ -21,3 +21,4 @@ C:\Users\tsafargaliev\Documents\Personal\Git\SPS-Helper v2.1\SPS-Helper v2.1\obj
 C:\Users\tsafargaliev\Documents\Personal\Git\SPS-Helper v2.1\SPS-Helper v2.1\obj\Debug\SPS-Helper v2.1.csproj.CoreCompileInputs.cache
 C:\Users\tsafargaliev\Documents\Personal\Git\SPS-Helper v2.1\SPS-Helper v2.1\obj\Debug\SPS-Helper v2.1.exe
 C:\Users\tsafargaliev\Documents\Personal\Git\SPS-Helper v2.1\SPS-Helper v2.1\obj\Debug\SPS-Helper v2.1.pdb
+C:\Users\tsafargaliev\Documents\Personal\Git\SPS-Helper v2.1\SPS-Helper v2.1\obj\Debug\SPS-Helper v2.1.csprojResolveAssemblyReference.cache

@@ -36,6 +36,7 @@ namespace SPS_Helper
             
             return result;
         }
+
         public int Save(string Path) {int result = 0; return result; }
         virtual public int Execute() {int result = 0; return result; }
     }
@@ -47,11 +48,13 @@ namespace SPS_Helper
         
         override public int Execute() 
         { 
-          int result = 0; 
+          int result = 0;             
           
           int ConnectionId = 0;
           SqlDataReader SqlReader = null;
           SqlCommand command = new SqlCommand(Text);
+            int i = 0;
+            int j = 0;
 
             ConnectionId = Connections.OpenConnection(ConnectionString);
             command.Connection = Connections.GetConnection(ConnectionId);
@@ -62,7 +65,7 @@ namespace SPS_Helper
 
                 if (SqlReader.HasRows)
                 {
-                    for (int i = 0; i < SqlReader.FieldCount; i++)
+                    for ( i = 0; i < SqlReader.FieldCount; i++)
                     {
                         //считываем сведения о столбцах
                         SqlReader.GetName(i);
@@ -70,18 +73,26 @@ namespace SPS_Helper
 
                     while (SqlReader.Read())
                     {
-                        for (int j = 0; j < SqlReader.FieldCount; j++)
+                        for (j = 0; j < SqlReader.FieldCount; j++)
                         {
                             // считываем данные построчно
                             SqlReader.GetValue(j);
                         }
                     }
                 }
+                else
+                {
+                    result = -13;
+                    return result;
+                }
             }
 
             catch
             {
-
+                result = -14;
+                object[] args = new object[1];
+                args[0] = (object)j;
+                Errors.ShowByID(result, args);
             } 
 
           return result; 
