@@ -103,42 +103,48 @@ namespace SPS_Helper
             Error[12].Section = (int)Sections.Files;
             Error[12].Subsection = "Пользовательские файлы";
             Error[12].Header = "Ошибка доступа к файлу";
-            Error[12].Description = "Файл {{0}} уже существует, перезаписываем?";
+            Error[12].Description = "Не удалось создать новый файл";
+
+            Error[13].Code = -8;
+            Error[13].Section = (int)Sections.Files;
+            Error[13].Subsection = "Пользовательские файлы";
+            Error[13].Header = "Ошибка доступа к файлу";
+            Error[13].Description = "Не удалось произвести запись в файл {{0}}, Ошибка {{1}}";
 
 
             /*
              * Ресурсы
              */
-            Error[13].Code = -21;
-            Error[13].Section = (int)Sections.Core;
-            Error[13].Subsection = "Пути";
-            Error[13].Header = "Ошибка доступа к значениям ресурсов";
-            Error[13].Description = "Не удается прочитать значение ресурса {{0}}, ошибка {{1}}";
+            Error[14].Code = -21;
+            Error[14].Section = (int)Sections.Core;
+            Error[14].Subsection = "Пути";
+            Error[14].Header = "Ошибка доступа к значениям ресурсов";
+            Error[14].Description = "Не удается прочитать значение ресурса {{0}}, ошибка {{1}}";
 
             /*
              *  Ошибки
              */
-            Error[14].Code = -404;
-            Error[14].Section = (int)Sections.Core;
-            Error[14].Subsection = "Ошибки";
-            Error[14].Header = "Ошибка доступа к сведениям об ошибке";
-            Error[14].Description = "Нет описания для ошибки с кодом: {{0}}";
+            Error[15].Code = -404;
+            Error[15].Section = (int)Sections.Core;
+            Error[15].Subsection = "Ошибки";
+            Error[15].Header = "Ошибка доступа к сведениям об ошибке";
+            Error[15].Description = "Нет описания для ошибки с кодом: {{0}}";
 
 
             /*
              *  SQL
              */
-            Error[15].Code = -500;
-            Error[15].Section = (int)Sections.Commands;
-            Error[15].Subsection = "Результат запроса";
-            Error[15].Header = "Возвращен пустой результат";
-            Error[15].Description = "Вероятно, это даже и не ошибка";
-
-            Error[16].Code = -501;
+            Error[16].Code = -500;
             Error[16].Section = (int)Sections.Commands;
             Error[16].Subsection = "Результат запроса";
-            Error[16].Header = "Ошибка считывания результата запроса";
-            Error[16].Description = "Успели дойти до строки {{1}}";
+            Error[16].Header = "Возвращен пустой результат";
+            Error[16].Description = "Вероятно, это даже и не ошибка";
+
+            Error[17].Code = -501;
+            Error[17].Section = (int)Sections.Commands;
+            Error[17].Subsection = "Результат запроса";
+            Error[17].Header = "Ошибка считывания результата запроса";
+            Error[17].Description = "Успели дойти до строки {{1}}";
         }
         public static void Log()
         {
@@ -228,10 +234,15 @@ namespace SPS_Helper
             string details = "";
             bool flag = false;
 
+            
+            int error_id_local = 0;
+
+            error_id_local = System.Math.Abs(Error_id);
+
             try
             {
-                header = Error[Error_id].Header;
-                message = Error[Error_id].Description;
+                header = Error[error_id_local].Header;
+                message = Error[error_id_local].Description;
                 flag = true;
   
             }

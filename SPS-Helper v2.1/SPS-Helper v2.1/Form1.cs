@@ -28,5 +28,11 @@ namespace SPS_Helper
             args[0] = "some path";
             Errors.ShowByCode_Dialog(-6, args);
         }
+
+        private void редакторМенюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form a = new Menu_Editor();
+            a.Show();
+        }
     }
 }

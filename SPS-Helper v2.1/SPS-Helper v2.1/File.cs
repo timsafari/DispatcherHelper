@@ -68,7 +68,7 @@ namespace SPS_Helper
                 path = path + Directory.GetCurrentDirectory();
             }
 
-            System.Windows.Forms.MessageBox.Show("в папке: \n" + path, "Ищем расширение: " + ExtList);
+            //System.Windows.Forms.MessageBox.Show("в папке: \n" + path, "Ищем расширение: " + ExtList);
 
             try
             {
@@ -128,10 +128,27 @@ namespace SPS_Helper
                     catch (Exception e2)
                     {
                         result = -7;
+                        object[] args2 = new object[1];
+                        args2[0] = e2.Message;
+                        Errors.ShowByCode(result, args2);
                         return result;
                     }
                 }
 
+                return result;
+            }
+
+
+            try
+            {
+                txt_file.Write(System.Text.Encoding.GetEncoding(1251).GetBytes(TextData), 0, System.Text.Encoding.GetEncoding(1251).GetByteCount(TextData));
+            }
+            catch (Exception e3)
+            {
+                result = -8;
+                object[] args = new object[1];
+                args[0] = e3.Message;
+                Errors.ShowByCode(result, args);
                 return result;
             }
 
