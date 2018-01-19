@@ -51,8 +51,7 @@ namespace SPS_Helper
             radioButton_n.Left = 10;
             radioButton_n.Top = 10;
             active_obj_handler = radioButton_n.Handle;
-            active_obj_type = "rb";
-            radioButton_n.MouseClick += new MouseEventHandler();
+            active_obj_type = "rb";            
         }
 
         private void pnl_menu_scheme_MouseClick(object sender, MouseEventArgs e)

@@ -30,9 +30,12 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.соединенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редакторМенюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редакторКомандToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.соединенияToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.списокСоединенийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.открытыеСоединенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,9 +43,10 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
-            this.соединенияToolStripMenuItem,
+            this.соединенияToolStripMenuItem1,
             this.редакторМенюToolStripMenuItem,
-            this.редакторКомандToolStripMenuItem});
+            this.редакторКомандToolStripMenuItem,
+            this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(912, 24);
@@ -54,12 +58,6 @@
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.файлToolStripMenuItem.Text = "Файл";
-            // 
-            // соединенияToolStripMenuItem
-            // 
-            this.соединенияToolStripMenuItem.Name = "соединенияToolStripMenuItem";
-            this.соединенияToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
-            this.соединенияToolStripMenuItem.Text = "Соединения";
             // 
             // редакторМенюToolStripMenuItem
             // 
@@ -73,6 +71,33 @@
             this.редакторКомандToolStripMenuItem.Name = "редакторКомандToolStripMenuItem";
             this.редакторКомандToolStripMenuItem.Size = new System.Drawing.Size(113, 20);
             this.редакторКомандToolStripMenuItem.Text = "Редактор команд";
+            // 
+            // соединенияToolStripMenuItem1
+            // 
+            this.соединенияToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.списокСоединенийToolStripMenuItem,
+            this.открытыеСоединенияToolStripMenuItem});
+            this.соединенияToolStripMenuItem1.Name = "соединенияToolStripMenuItem1";
+            this.соединенияToolStripMenuItem1.Size = new System.Drawing.Size(86, 20);
+            this.соединенияToolStripMenuItem1.Text = "Соединения";
+            // 
+            // списокСоединенийToolStripMenuItem
+            // 
+            this.списокСоединенийToolStripMenuItem.Name = "списокСоединенийToolStripMenuItem";
+            this.списокСоединенийToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.списокСоединенийToolStripMenuItem.Text = "Список соединений";
+            // 
+            // открытыеСоединенияToolStripMenuItem
+            // 
+            this.открытыеСоединенияToolStripMenuItem.Name = "открытыеСоединенияToolStripMenuItem";
+            this.открытыеСоединенияToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.открытыеСоединенияToolStripMenuItem.Text = "Открытые соединения";
+            // 
+            // справкаToolStripMenuItem
+            // 
+            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.справкаToolStripMenuItem.Text = "Справка";
             // 
             // _frm_Menu
             // 
@@ -96,9 +121,12 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem соединенияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem редакторМенюToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem редакторКомандToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem соединенияToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem списокСоединенийToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem открытыеСоединенияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
     }
 }
 
