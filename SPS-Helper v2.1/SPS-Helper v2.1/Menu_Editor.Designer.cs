@@ -108,6 +108,7 @@
             this.lbl_SQL.Size = new System.Drawing.Size(75, 13);
             this.lbl_SQL.TabIndex = 0;
             this.lbl_SQL.Text = "SQL-команда";
+            
             this.lbl_SQL.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lbl_SQL_MouseClick);
             this.lbl_SQL.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbl_SQL_MouseDown);
             this.lbl_SQL.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lbl_SQL_MouseMove);

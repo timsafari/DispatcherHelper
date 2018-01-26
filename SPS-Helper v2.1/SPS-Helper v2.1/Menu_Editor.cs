@@ -45,27 +45,30 @@ namespace SPS_Helper
 
         private void lbl_SQL_MouseClick(object sender, MouseEventArgs e)
         {
-            System.Windows.Forms.RadioButton radioButton_n;
-            radioButton_n = new System.Windows.Forms.RadioButton();
-            radioButton_n.Parent = pnl_menu_scheme;
-            radioButton_n.Left = 10;
-            radioButton_n.Top = 10;
-            active_obj_handler = radioButton_n.Handle;
-            active_obj_type = "rb";            
+            System.Windows.Forms.PictureBox shape;
+            shape = new System.Windows.Forms.PictureBox();
+            shape.Parent = pnl_menu_scheme;
+            shape.Left = 10;
+            shape.Top = 10;
+            shape.Image = Properties.Resources.SQL_Command;
+            active_obj_handler = shape.Handle;
+            active_obj_type = "SQL_command";            
         }
 
         private void pnl_menu_scheme_MouseClick(object sender, MouseEventArgs e)
         {
-            if ((active_obj_handler != null) && (active_obj_type == "rb"))
+            if ((active_obj_handler != null) && (active_obj_type != ""))
             {
                 active_obj_handler = (IntPtr)null;
                 active_obj_type = "";
+                Command_Editor cmd_editor = new Command_Editor();
+                cmd_editor.ShowDialog();
             }
         }
 
         private void pnl_menu_scheme_MouseMove(object sender, MouseEventArgs e)
         {
-            if ((active_obj_handler != null) && (active_obj_type == "rb"))
+            if ((active_obj_handler != null) && (active_obj_type != ""))
             {                
                 Control rb = Control.FromHandle(active_obj_handler);
                 rb.Left = e.X+20;
@@ -77,5 +80,6 @@ namespace SPS_Helper
         {
             MessageBox.Show("Клик");
         }
+
     }
 }

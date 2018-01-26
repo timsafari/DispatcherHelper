@@ -142,6 +142,16 @@ namespace SPS_Helper.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SQL_Command {
+            get {
+                object obj = ResourceManager.GetObject("SQL-Command", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Scritps\ExtMenu\.
         /// </summary>
         internal static string Work_Menu_Files_Subdir {
