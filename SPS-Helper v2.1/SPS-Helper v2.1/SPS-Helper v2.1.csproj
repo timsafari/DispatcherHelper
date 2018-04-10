@@ -63,12 +63,16 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menu_command_block.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Menu_Editor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Menu_Editor.Designer.cs">
       <DependentUpon>Menu_Editor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menu_worker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Command_Editor.resx">
