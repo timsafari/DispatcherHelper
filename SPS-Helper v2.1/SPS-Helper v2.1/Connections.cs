@@ -10,7 +10,7 @@ namespace SPS_Helper
     public static class Connections
     {
 
-        private static List <SqlConnection> sqlconnections = new List<SqlConnection>();
+        private static List<SqlConnection> sqlconnections = new List<SqlConnection>();
 
         public static List<string> sql_connectionstrings = new List<string>();
         public static List<string> mdx_connectionstrings = new List<string>();
@@ -27,7 +27,7 @@ namespace SPS_Helper
                 result = -1;
             }
             return result;
-            }
+        }
 
         public static int OpenConnection/*Async*/(string ConnString, bool Force = false)
         {
@@ -38,7 +38,7 @@ namespace SPS_Helper
              */
             if (Force == false && sqlconnections != null)
             {
-                for(int i=0;i < sqlconnections.Count;i++)
+                for (int i = 0; i < sqlconnections.Count; i++)
                 {
                     if (sqlconnections[i].ConnectionString == ConnString && sqlconnections[i].State.ToString() != "Closed")
                     {
@@ -50,8 +50,8 @@ namespace SPS_Helper
             }
             try
             {
-                SqlConnection new_connection = new SqlConnection();            
-                new_connection.ConnectionString = ConnString;                
+                SqlConnection new_connection = new SqlConnection();
+                new_connection.ConnectionString = ConnString;
                 sqlconnections.Add(new_connection);
                 new_connection.Open/*Async*/();
                 result = sqlconnections.Count - 1;
@@ -59,7 +59,7 @@ namespace SPS_Helper
             catch
             {
                 result = -1;
-            }         
+            }
             return result;
         }
 
@@ -105,8 +105,29 @@ namespace SPS_Helper
         {
             int result = 0;
 
-            
 
+
+            return result;
+        }
+
+        public static string[,] ListConnections()
+        {
+            
+            if ((sqlconnections is null) || (sqlconnections.Count() == 0))
+            {
+                return null;
+            }
+
+            string[,] result = new string[0, 3];
+            int i = 0;
+            foreach (SqlConnection sqlcon in sqlconnections)
+            {
+                i++;
+                Misc.ResizeArray(result, new int[]{i, 3});
+                result[i - 1, 0] = sqlcon.ConnectionString;
+                result[i - 1, 1] = sqlcon.State.ToString();
+                result[i - 1, 2] = sqlcon.ClientConnectionId.ToString();
+            }
             return result;
         }
     }

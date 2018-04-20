@@ -24,3 +24,4 @@ C:\Users\tsafargaliev\Documents\Personal\Git\SPS-Helper v2.1\SPS-Helper v2.1\obj
 C:\Users\tsafargaliev\Documents\Personal\Git\SPS-Helper v2.1\SPS-Helper v2.1\obj\Debug\SPS-Helper v2.1.csprojResolveAssemblyReference.cache
 C:\Users\tsafargaliev\Documents\Personal\Git\SPS-Helper v2.1\SPS-Helper v2.1\obj\Debug\SPS_Helper.Command_Editor.resources
 C:\Users\tsafargaliev\Documents\Personal\Git\SPS-Helper v2.1\SPS-Helper v2.1\obj\Debug\SPS_Helper.Menu_Editor.resources
+C:\Users\tsafargaliev\Documents\Personal\Git\SPS-Helper v2.1\SPS-Helper v2.1\obj\Debug\SPS_Helper.ConnectionList.resources

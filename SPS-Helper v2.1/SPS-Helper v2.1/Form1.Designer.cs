@@ -30,11 +30,11 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.редакторМенюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.редакторКомандToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.соединенияToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.списокСоединенийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.открытыеСоединенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.редакторМенюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.редакторКомандToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -59,19 +59,6 @@
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
-            // редакторМенюToolStripMenuItem
-            // 
-            this.редакторМенюToolStripMenuItem.Name = "редакторМенюToolStripMenuItem";
-            this.редакторМенюToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
-            this.редакторМенюToolStripMenuItem.Text = "Редактор меню";
-            this.редакторМенюToolStripMenuItem.Click += new System.EventHandler(this.редакторМенюToolStripMenuItem_Click);
-            // 
-            // редакторКомандToolStripMenuItem
-            // 
-            this.редакторКомандToolStripMenuItem.Name = "редакторКомандToolStripMenuItem";
-            this.редакторКомандToolStripMenuItem.Size = new System.Drawing.Size(113, 20);
-            this.редакторКомандToolStripMenuItem.Text = "Редактор команд";
-            // 
             // соединенияToolStripMenuItem1
             // 
             this.соединенияToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -86,12 +73,26 @@
             this.списокСоединенийToolStripMenuItem.Name = "списокСоединенийToolStripMenuItem";
             this.списокСоединенийToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.списокСоединенийToolStripMenuItem.Text = "Список соединений";
+            this.списокСоединенийToolStripMenuItem.Click += new System.EventHandler(this.списокСоединенийToolStripMenuItem_Click);
             // 
             // открытыеСоединенияToolStripMenuItem
             // 
             this.открытыеСоединенияToolStripMenuItem.Name = "открытыеСоединенияToolStripMenuItem";
             this.открытыеСоединенияToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.открытыеСоединенияToolStripMenuItem.Text = "Открытые соединения";
+            // 
+            // редакторМенюToolStripMenuItem
+            // 
+            this.редакторМенюToolStripMenuItem.Name = "редакторМенюToolStripMenuItem";
+            this.редакторМенюToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
+            this.редакторМенюToolStripMenuItem.Text = "Редактор меню";
+            this.редакторМенюToolStripMenuItem.Click += new System.EventHandler(this.редакторМенюToolStripMenuItem_Click);
+            // 
+            // редакторКомандToolStripMenuItem
+            // 
+            this.редакторКомандToolStripMenuItem.Name = "редакторКомандToolStripMenuItem";
+            this.редакторКомандToolStripMenuItem.Size = new System.Drawing.Size(113, 20);
+            this.редакторКомандToolStripMenuItem.Text = "Редактор команд";
             // 
             // справкаToolStripMenuItem
             // 

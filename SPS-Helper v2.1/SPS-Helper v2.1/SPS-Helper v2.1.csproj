@@ -52,6 +52,12 @@
     <Compile Include="Command_Editor.Designer.cs">
       <DependentUpon>Command_Editor.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConnectionList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConnectionList.Designer.cs">
+      <DependentUpon>ConnectionList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Connections.cs" />
     <Compile Include="Core.cs" />
     <Compile Include="Cryptor.cs" />
@@ -73,10 +79,14 @@
       <DependentUpon>Menu_Editor.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu_worker.cs" />
+    <Compile Include="Misc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Command_Editor.resx">
       <DependentUpon>Command_Editor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConnectionList.resx">
+      <DependentUpon>ConnectionList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
