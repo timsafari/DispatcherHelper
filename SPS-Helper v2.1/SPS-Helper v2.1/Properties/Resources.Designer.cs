@@ -144,6 +144,16 @@ namespace SPS_Helper.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PS_command {
+            get {
+                object obj = ResourceManager.GetObject("PS-command", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SQL_Command {
             get {
                 object obj = ResourceManager.GetObject("SQL-Command", resourceCulture);

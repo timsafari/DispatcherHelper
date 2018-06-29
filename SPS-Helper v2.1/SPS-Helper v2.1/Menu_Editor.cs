@@ -31,8 +31,6 @@ namespace SPS_Helper
 
         }
 
-
-
         private void lbl_SQL_MouseMove(object sender, MouseEventArgs e)
         {
 
@@ -52,16 +50,16 @@ namespace SPS_Helper
             shape.Top = 10;
             shape.Image = Properties.Resources.SQL_Command;
             active_obj_handler = shape.Handle;
-            active_obj_type = "SQL_command";            
+            active_obj_type = "SQL";            
         }
 
         private void pnl_menu_scheme_MouseClick(object sender, MouseEventArgs e)
         {
             if ((active_obj_handler != null) && (active_obj_type != ""))
-            {
+            {                
+                Command_Editor cmd_editor = new Command_Editor(active_obj_type);
                 active_obj_handler = (IntPtr)null;
                 active_obj_type = "";
-                Command_Editor cmd_editor = new Command_Editor();
                 cmd_editor.ShowDialog();
             }
         }
@@ -76,10 +74,16 @@ namespace SPS_Helper
             }
         }
 
-        public void radioButton_n_MouseClick()
+        private void lbl_PS_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Клик");
+            System.Windows.Forms.PictureBox shape;
+            shape = new System.Windows.Forms.PictureBox();
+            shape.Parent = pnl_menu_scheme;
+            shape.Left = 10;
+            shape.Top = 10;
+            shape.Image = Properties.Resources.PS_command;
+            active_obj_handler = shape.Handle;
+            active_obj_type = "PowerShell";
         }
-
     }
 }

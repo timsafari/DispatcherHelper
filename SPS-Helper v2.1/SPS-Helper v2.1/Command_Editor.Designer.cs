@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cm_comm_type = new System.Windows.Forms.ComboBox();
+            this.cb_comm_type = new System.Windows.Forms.ComboBox();
             this.lbl_comm_type = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.lbl_comm_text = new System.Windows.Forms.Label();
@@ -42,18 +42,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // cm_comm_type
+            // cb_comm_type
             // 
-            this.cm_comm_type.FormattingEnabled = true;
-            this.cm_comm_type.Items.AddRange(new object[] {
+            this.cb_comm_type.FormattingEnabled = true;
+            this.cb_comm_type.Items.AddRange(new object[] {
             "",
             "SQL",
             "MDX",
             "PowerShell"});
-            this.cm_comm_type.Location = new System.Drawing.Point(94, 10);
-            this.cm_comm_type.Name = "cm_comm_type";
-            this.cm_comm_type.Size = new System.Drawing.Size(65, 21);
-            this.cm_comm_type.TabIndex = 0;
+            this.cb_comm_type.Location = new System.Drawing.Point(94, 10);
+            this.cb_comm_type.Name = "cb_comm_type";
+            this.cb_comm_type.Size = new System.Drawing.Size(65, 21);
+            this.cb_comm_type.TabIndex = 0;
+            this.cb_comm_type.SelectedIndexChanged += new System.EventHandler(this.cb_comm_type_SelectedIndexChanged);
             // 
             // lbl_comm_type
             // 
@@ -148,7 +149,7 @@
             this.Controls.Add(this.lbl_comm_text);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.lbl_comm_type);
-            this.Controls.Add(this.cm_comm_type);
+            this.Controls.Add(this.cb_comm_type);
             this.Name = "Command_Editor";
             this.Text = "Command_Editor";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -159,7 +160,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox cm_comm_type;
+        private System.Windows.Forms.ComboBox cb_comm_type;
         private System.Windows.Forms.Label lbl_comm_type;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label lbl_comm_text;

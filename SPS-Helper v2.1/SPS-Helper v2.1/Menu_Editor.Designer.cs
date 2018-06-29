@@ -90,6 +90,7 @@
             this.lbl_PS.Size = new System.Drawing.Size(107, 13);
             this.lbl_PS.TabIndex = 2;
             this.lbl_PS.Text = "PowerShell-команда";
+            this.lbl_PS.Click += new System.EventHandler(this.lbl_PS_Click);
             // 
             // lbl_MDX_command
             // 
@@ -108,7 +109,6 @@
             this.lbl_SQL.Size = new System.Drawing.Size(75, 13);
             this.lbl_SQL.TabIndex = 0;
             this.lbl_SQL.Text = "SQL-команда";
-            
             this.lbl_SQL.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lbl_SQL_MouseClick);
             this.lbl_SQL.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbl_SQL_MouseDown);
             this.lbl_SQL.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lbl_SQL_MouseMove);

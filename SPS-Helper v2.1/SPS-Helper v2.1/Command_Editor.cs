@@ -16,5 +16,18 @@ namespace SPS_Helper
         {
             InitializeComponent();
         }
+
+
+        public Command_Editor(string cb_selected_command)
+        {
+            InitializeComponent();
+            cb_comm_type.SelectedItem = cb_selected_command;
+        }
+        
+
+        private void cb_comm_type_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

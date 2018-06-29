@@ -15,14 +15,13 @@ namespace SPS_Helper
 {
     class Command
     {
-        string Alias;
-        string Type { get; }
-        public string Text;
-        public string Result;
+        string Alias;               //Псевдоним команды
+        string Type { get; }        //Тип команды (сделать через enum?)
+        public string Text;         //Текст команды
+        public string Result;       //Результат выполнения команды
         //int Buffer_size_in_bytes { get; set; }
-        string[] Parameters;
-        object[] ParameterValues;
- 
+        string[] Parameters;        //Список параметров 
+        object[] ParameterValues;   //Значения параметров
 
         public int Load(string Path)        
         {
@@ -36,7 +35,6 @@ namespace SPS_Helper
             
             return result;
         }
-
         public int Save(string Path) {int result = 0; return result; }
         virtual public int Execute() {int result = 0; return result; }
     }
@@ -45,7 +43,6 @@ namespace SPS_Helper
     {
         string Type = "SQL";
         string ConnectionString;
-        
         override public int Execute() 
         { 
           int result = 0;             
@@ -101,11 +98,22 @@ namespace SPS_Helper
 
     class MenuCommand : Command
     {
-        public int Id = 1;
-        public int ParentID = 0;
-        public string ActionType = "";
-        public string Action = "";
-        public string Type = "Menu";
+
+        public int Id;
+        public int ParentID;
+        public string ActionType;
+        public string Action;
+
+        public MenuCommand()
+        {
+            InitializeComponent();
+        }
+
+        private void InitializeComponent()
+        {
+            
+        }
+
     }
 
     class PowerShellCommand : Command

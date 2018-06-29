@@ -65,7 +65,7 @@ namespace SPS_Helper
             //Пользовательские файлы
             Error[6].Code = -1;
             Error[6].Section = (int)Sections.Files;
-            Error[6].Subsection = "Файлы ядра";
+            Error[6].Subsection = "Пользовательские файлы";
             Error[6].Header = "Ошибка доступа к файлу";
             Error[6].Description = "Отсутствует директория или путь некорректен {{0}}";
 

@@ -24,8 +24,10 @@ namespace SPS_Helper
             }
             catch
             {
-                System.Windows.Forms.MessageBox.Show(Path, "Ошибка загрузки файла команды");
-                result = -1;
+                result = -7;
+                object[] args = new object[1];
+                args[0] = (object)Path;
+                Errors.ShowByID(result, args);
                 return result;
             }
 
@@ -42,7 +44,11 @@ namespace SPS_Helper
                 }
                 catch
                 {
-                    System.Windows.Forms.MessageBox.Show(Path, "Ошибка чтения из файла");
+                    result = -9;
+                    object[] args = new object[2];
+                    args[0] = (object)Path;
+                    args[1] = (object)"чтения очередной порции байт";
+                    Errors.ShowByID(result, args);
                 }
                 if (fact_bytes == 0)
                     break;
