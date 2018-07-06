@@ -144,9 +144,19 @@ namespace SPS_Helper.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PS_command {
+        internal static System.Drawing.Bitmap MDX_Command {
             get {
-                object obj = ResourceManager.GetObject("PS-command", resourceCulture);
+                object obj = ResourceManager.GetObject("MDX_Command", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PS_Command {
+            get {
+                object obj = ResourceManager.GetObject("PS_command", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,7 +166,7 @@ namespace SPS_Helper.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap SQL_Command {
             get {
-                object obj = ResourceManager.GetObject("SQL-Command", resourceCulture);
+                object obj = ResourceManager.GetObject("SQL_Command", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

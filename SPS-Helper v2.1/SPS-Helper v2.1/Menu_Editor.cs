@@ -21,10 +21,7 @@ namespace SPS_Helper
             InitializeComponent();
         }
 
-        private void lbl_SQL_MouseDown(object sender, MouseEventArgs e)
-        {
 
-        }
 
         private void pnl_menu_scheme_MouseHover(object sender, EventArgs e)
         {
@@ -81,9 +78,21 @@ namespace SPS_Helper
             shape.Parent = pnl_menu_scheme;
             shape.Left = 10;
             shape.Top = 10;
-            shape.Image = Properties.Resources.PS_command;
+            shape.Image = Properties.Resources.PS_Command;
             active_obj_handler = shape.Handle;
             active_obj_type = "PowerShell";
+        }
+
+        private void lbl_MDX_command_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.PictureBox shape;
+            shape = new System.Windows.Forms.PictureBox();
+            shape.Parent = pnl_menu_scheme;
+            shape.Left = 10;
+            shape.Top = 10;
+            shape.Image = Properties.Resources.MDX_Command;
+            active_obj_handler = shape.Handle;
+            active_obj_type = "MDX";
         }
     }
 }

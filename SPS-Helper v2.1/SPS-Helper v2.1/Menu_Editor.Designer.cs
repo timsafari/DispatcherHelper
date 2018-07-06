@@ -100,6 +100,7 @@
             this.lbl_MDX_command.Size = new System.Drawing.Size(78, 13);
             this.lbl_MDX_command.TabIndex = 1;
             this.lbl_MDX_command.Text = "MDX-команда";
+            this.lbl_MDX_command.Click += new System.EventHandler(this.lbl_MDX_command_Click);
             // 
             // lbl_SQL
             // 
@@ -110,7 +111,6 @@
             this.lbl_SQL.TabIndex = 0;
             this.lbl_SQL.Text = "SQL-команда";
             this.lbl_SQL.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lbl_SQL_MouseClick);
-            this.lbl_SQL.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbl_SQL_MouseDown);
             this.lbl_SQL.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lbl_SQL_MouseMove);
             // 
             // pnl_menu_scheme
