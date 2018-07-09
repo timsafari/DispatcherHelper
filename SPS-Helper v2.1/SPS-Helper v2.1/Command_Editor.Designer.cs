@@ -39,6 +39,9 @@
             this.КакПараметр = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ПравилоПреобразования = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Write = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lbl_Conn_Str = new System.Windows.Forms.Label();
+            this.chb_Use_Conn_Str = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,6 +96,7 @@
             this.btn_check_command.TabIndex = 4;
             this.btn_check_command.Text = "Проверить";
             this.btn_check_command.UseVisualStyleBackColor = true;
+            this.btn_check_command.Click += new System.EventHandler(this.btn_check_command_Click);
             // 
             // dataGridView1
             // 
@@ -138,11 +142,40 @@
             this.btn_Write.Text = "Записать";
             this.btn_Write.UseVisualStyleBackColor = true;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(127, 339);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(310, 21);
+            this.comboBox1.TabIndex = 7;
+            // 
+            // lbl_Conn_Str
+            // 
+            this.lbl_Conn_Str.AutoSize = true;
+            this.lbl_Conn_Str.Location = new System.Drawing.Point(16, 344);
+            this.lbl_Conn_Str.Name = "lbl_Conn_Str";
+            this.lbl_Conn_Str.Size = new System.Drawing.Size(106, 13);
+            this.lbl_Conn_Str.TabIndex = 8;
+            this.lbl_Conn_Str.Text = "Строка соединения";
+            // 
+            // chb_Use_Conn_Str
+            // 
+            this.chb_Use_Conn_Str.AutoSize = true;
+            this.chb_Use_Conn_Str.Location = new System.Drawing.Point(443, 344);
+            this.chb_Use_Conn_Str.Name = "chb_Use_Conn_Str";
+            this.chb_Use_Conn_Str.Size = new System.Drawing.Size(15, 14);
+            this.chb_Use_Conn_Str.TabIndex = 9;
+            this.chb_Use_Conn_Str.UseVisualStyleBackColor = true;
+            // 
             // Command_Editor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(613, 629);
+            this.Controls.Add(this.chb_Use_Conn_Str);
+            this.Controls.Add(this.lbl_Conn_Str);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btn_Write);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_check_command);
@@ -171,5 +204,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn КакПараметр;
         private System.Windows.Forms.DataGridViewTextBoxColumn ПравилоПреобразования;
         private System.Windows.Forms.Button btn_Write;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lbl_Conn_Str;
+        private System.Windows.Forms.CheckBox chb_Use_Conn_Str;
     }
 }

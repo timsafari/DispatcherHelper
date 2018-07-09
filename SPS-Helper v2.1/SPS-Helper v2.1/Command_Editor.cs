@@ -29,5 +29,17 @@ namespace SPS_Helper
         {
 
         }
+
+        private void btn_check_command_Click(object sender, EventArgs e)
+        {
+            if (chb_Use_Conn_Str.Checked)
+            {
+
+            }
+            else
+            {
+
+            }
+        }
     }
 }
