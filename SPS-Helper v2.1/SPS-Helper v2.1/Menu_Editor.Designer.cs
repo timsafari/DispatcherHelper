@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbl_Screen = new System.Windows.Forms.Label();
             this.lbl_Link = new System.Windows.Forms.Label();
@@ -36,6 +37,7 @@
             this.lbl_MDX_command = new System.Windows.Forms.Label();
             this.lbl_SQL = new System.Windows.Forms.Label();
             this.pnl_menu_scheme = new System.Windows.Forms.Panel();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,6 +97,7 @@
             // lbl_MDX_command
             // 
             this.lbl_MDX_command.AutoSize = true;
+            this.lbl_MDX_command.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lbl_MDX_command.Location = new System.Drawing.Point(17, 44);
             this.lbl_MDX_command.Name = "lbl_MDX_command";
             this.lbl_MDX_command.Size = new System.Drawing.Size(78, 13);
@@ -111,7 +114,6 @@
             this.lbl_SQL.TabIndex = 0;
             this.lbl_SQL.Text = "SQL-команда";
             this.lbl_SQL.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lbl_SQL_MouseClick);
-            this.lbl_SQL.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lbl_SQL_MouseMove);
             // 
             // pnl_menu_scheme
             // 
@@ -121,9 +123,12 @@
             this.pnl_menu_scheme.Size = new System.Drawing.Size(644, 490);
             this.pnl_menu_scheme.TabIndex = 1;
             this.pnl_menu_scheme.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pnl_menu_scheme_MouseClick);
-            this.pnl_menu_scheme.MouseHover += new System.EventHandler(this.pnl_menu_scheme_MouseHover);
             this.pnl_menu_scheme.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_menu_scheme_MouseMove);
-            this.pnl_menu_scheme.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnl_menu_scheme_MouseUp);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // Menu_Editor
             // 
@@ -150,5 +155,6 @@
         private System.Windows.Forms.Label lbl_MDX_command;
         private System.Windows.Forms.Label lbl_SQL;
         private System.Windows.Forms.Panel pnl_menu_scheme;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

@@ -43,8 +43,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
-            this.соединенияToolStripMenuItem1,
             this.редакторМенюToolStripMenuItem,
+            this.соединенияToolStripMenuItem1,
             this.редакторКомандToolStripMenuItem,
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);

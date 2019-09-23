@@ -13,41 +13,93 @@ namespace SPS_Helper
     public partial class Menu_Editor : Form
     {
 
-        IntPtr active_obj_handler = new IntPtr();
-        string active_obj_type = "";
+        static IntPtr active_obj_handler = new IntPtr();
+        static string active_obj_type = "";
+        public static List<IntPtr> obj_handlers;
 
         public Menu_Editor()
         {
             InitializeComponent();
         }
 
+        
 
-
-        private void pnl_menu_scheme_MouseHover(object sender, EventArgs e)
+        public class Shape : System.Windows.Forms.PictureBox
         {
+            public string objectType = "";
+            public bool IsSelected = false;
+
+            private static void InitializeComponent()
+            {
+
+            }
+
+            static Shape()
+            {
+                Shape.InitializeComponent();
+            }
+
+            public Shape(string Type,Control Parent)
+            {
+                InitializeComponent();
+                Left = 10;
+                Top = 10;
+                obj_handlers.Add(this.Handle);
+                switch (Type)
+                {
+                    case "SQL":
+                        Image = Properties.Resources.SQL_Command;
+                        break;
+                    case "PowerShell":
+                        Image = Properties.Resources.PS_Command;
+                        break;
+                    case "MDX":
+                        Image = Properties.Resources.MDX_Command;
+                        break;            
+                }
+
+                this.BorderStyle = BorderStyle.FixedSingle;
+                this.Parent = Parent;
+                
+                this.Click += new System.EventHandler(Shape_Click);
+
+                active_obj_handler = this.Handle;
+                active_obj_type = Type;
+
+            }
+
+            private void Shape_Click(object sender, EventArgs e)
+            {
+                IsSelected = !IsSelected;
+
+                switch(IsSelected)
+                {
+                    case true:
+                        this.BorderStyle = BorderStyle.Fixed3D;
+                        break;
+                    case false:
+                        this.BorderStyle = BorderStyle.FixedSingle;
+                        break;
+                }
+                            
+            }
+
+            private void Shape_Destroy(object sender, EventArgs e)
+            {
+                obj_handlers.Remove(Handle);
+                Shape.Destroy();
+            }
 
         }
 
-        private void lbl_SQL_MouseMove(object sender, MouseEventArgs e)
-        {
 
-        }
 
-        private void pnl_menu_scheme_MouseUp(object sender, MouseEventArgs e)
-        {
-
-        }
 
         private void lbl_SQL_MouseClick(object sender, MouseEventArgs e)
         {
-            System.Windows.Forms.PictureBox shape;
-            shape = new System.Windows.Forms.PictureBox();
-            shape.Parent = pnl_menu_scheme;
-            shape.Left = 10;
-            shape.Top = 10;
-            shape.Image = Properties.Resources.SQL_Command;
-            active_obj_handler = shape.Handle;
-            active_obj_type = "SQL";            
+            Shape shape;
+            shape = new Shape("SQL", pnl_menu_scheme);         
+                      
         }
 
         private void pnl_menu_scheme_MouseClick(object sender, MouseEventArgs e)
@@ -73,26 +125,14 @@ namespace SPS_Helper
 
         private void lbl_PS_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.PictureBox shape;
-            shape = new System.Windows.Forms.PictureBox();
-            shape.Parent = pnl_menu_scheme;
-            shape.Left = 10;
-            shape.Top = 10;
-            shape.Image = Properties.Resources.PS_Command;
-            active_obj_handler = shape.Handle;
-            active_obj_type = "PowerShell";
+            Shape shape;
+            shape = new Shape("PowerShell", pnl_menu_scheme);
         }
 
         private void lbl_MDX_command_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.PictureBox shape;
-            shape = new System.Windows.Forms.PictureBox();
-            shape.Parent = pnl_menu_scheme;
-            shape.Left = 10;
-            shape.Top = 10;
-            shape.Image = Properties.Resources.MDX_Command;
-            active_obj_handler = shape.Handle;
-            active_obj_type = "MDX";
+            Shape shape;
+            shape = new Shape("MDX", pnl_menu_scheme);
         }
     }
 }
