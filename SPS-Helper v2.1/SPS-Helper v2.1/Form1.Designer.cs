@@ -30,12 +30,13 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.редакторМенюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.соединенияToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.списокСоединенийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.открытыеСоединенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.редакторМенюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редакторКомандToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.таймерыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +47,7 @@
             this.редакторМенюToolStripMenuItem,
             this.соединенияToolStripMenuItem1,
             this.редакторКомандToolStripMenuItem,
+            this.таймерыToolStripMenuItem,
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -58,6 +60,13 @@
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.файлToolStripMenuItem.Text = "Файл";
+            // 
+            // редакторМенюToolStripMenuItem
+            // 
+            this.редакторМенюToolStripMenuItem.Name = "редакторМенюToolStripMenuItem";
+            this.редакторМенюToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
+            this.редакторМенюToolStripMenuItem.Text = "Редактор меню";
+            this.редакторМенюToolStripMenuItem.Click += new System.EventHandler(this.редакторМенюToolStripMenuItem_Click);
             // 
             // соединенияToolStripMenuItem1
             // 
@@ -81,13 +90,6 @@
             this.открытыеСоединенияToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.открытыеСоединенияToolStripMenuItem.Text = "Открытые соединения";
             // 
-            // редакторМенюToolStripMenuItem
-            // 
-            this.редакторМенюToolStripMenuItem.Name = "редакторМенюToolStripMenuItem";
-            this.редакторМенюToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
-            this.редакторМенюToolStripMenuItem.Text = "Редактор меню";
-            this.редакторМенюToolStripMenuItem.Click += new System.EventHandler(this.редакторМенюToolStripMenuItem_Click);
-            // 
             // редакторКомандToolStripMenuItem
             // 
             this.редакторКомандToolStripMenuItem.Name = "редакторКомандToolStripMenuItem";
@@ -99,6 +101,12 @@
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
             this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.справкаToolStripMenuItem.Text = "Справка";
+            // 
+            // таймерыToolStripMenuItem
+            // 
+            this.таймерыToolStripMenuItem.Name = "таймерыToolStripMenuItem";
+            this.таймерыToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.таймерыToolStripMenuItem.Text = "Таймеры";
             // 
             // _frm_Menu
             // 
@@ -128,6 +136,7 @@
         private System.Windows.Forms.ToolStripMenuItem списокСоединенийToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem открытыеСоединенияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem таймерыToolStripMenuItem;
     }
 }
 

@@ -74,6 +74,7 @@
             this.lbl_Link.Size = new System.Drawing.Size(38, 13);
             this.lbl_Link.TabIndex = 4;
             this.lbl_Link.Text = "Связь";
+            this.lbl_Link.Click += new System.EventHandler(this.lbl_Link_Click);
             // 
             // lbl_Menu
             // 
@@ -122,6 +123,7 @@
             this.pnl_menu_scheme.Name = "pnl_menu_scheme";
             this.pnl_menu_scheme.Size = new System.Drawing.Size(644, 490);
             this.pnl_menu_scheme.TabIndex = 1;
+            this.pnl_menu_scheme.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_menu_scheme_Paint);
             this.pnl_menu_scheme.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pnl_menu_scheme_MouseClick);
             this.pnl_menu_scheme.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_menu_scheme_MouseMove);
             // 
